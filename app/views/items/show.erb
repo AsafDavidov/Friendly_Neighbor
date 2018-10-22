@@ -1,0 +1,7 @@
+<h1> <%= @item.name %> </h1>
+<%= image_tag @item.images.first.url %><br>
+Daily Rate: <%= @item.price %>
+Renter: <%= @item.owner_name %>
+Availiblity: <%= @item.available? %>
+
+<%= button_to "Rent Item", {controller: "rentings", action: "new"}, method: :get, params:{item_id: @item.id} %>
