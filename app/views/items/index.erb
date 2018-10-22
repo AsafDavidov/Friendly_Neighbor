@@ -1,0 +1,7 @@
+<h1>Items</h1>
+
+<% @items.each do |item| %>
+<%= link_to item.name, item_path(item) %><br>
+<%= item.description %><br>
+<img src="<%= item.images.first.url %>" alt="sock">
+<% end %>

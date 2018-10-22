@@ -1,0 +1,23 @@
+<h1>Welcome to the Neighborhood</h1>
+
+<% if flash[:errors] %>
+  <% flash[:errors].each do |mess| %>
+  <%= mess %>
+  <% end %>
+<% end %>
+<!-- # <%= form_tag controller: "users", action: "create" %>
+#   <%= label_tag :name, "Username" %> <%= text_field_tag :name %><br>
+#   <%= label_tag :password, "Password" %> <%= password_field_tag :password %><br>
+#   <%= label_tag :password_confirmation, "Confirm Password" %> <%= password_field_tag :password_confirmation %><br>
+#   <%= label_tag :email, "Email Address" %> <%= text_field_tag :email %><br>
+#   <%= label_tag :address, "Address" %> <%= text_field_tag :address, "Address" %><br>
+#   <%= submit_tag "Create Account" %><br> -->
+
+  <%= form_for @user do |f| %>
+  <%= f.label :name %><%= f.text_field :name %>
+  <%= f.label :email %><%= f.text_field :email %>
+  <%= f.label :address %><%= f.text_field :address%>
+  <%= f.label :password %><%= f.password_field :password %>
+  <%= f.label :password_confirmation %>  <%= f.password_field :password_confirmation %>
+  <%= f.submit %>
+  <% end %>

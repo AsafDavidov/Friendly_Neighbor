@@ -1,0 +1,14 @@
+<h1>Login please</h1>
+
+<% if flash[:errors] %>
+  <% flash[:errors].each do |mess| %>
+  <%= mess %>
+  <% end %>
+<% end %>
+
+<%= form_tag controller: "sessions", action: "create", method: :post %>
+   <%= label_tag :name, "Username" %> <%= text_field_tag :name %>
+   <%= label_tag :password, "Password" %> <%= password_field_tag :password %>
+   <%= submit_tag "Log In" %><br>
+
+   <%= link_to "Create Account", new_user_path%>
