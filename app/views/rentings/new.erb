@@ -1,0 +1,14 @@
+<h1>New Rental for <%= @item.name %></h1>
+Renter: <%= @item.owner_name%>
+Daily Rate: <%= @item.price %>
+
+
+<%= form_for @renting do |f| %>
+  <%= f.label :pickup_date %>
+  <%= f.date_field :field %>
+  <%= f.label :dropoff_date %>
+  <%= f.date_field :field %>
+
+  <%= f.submit %>
+
+<% end %>
