@@ -1,14 +1,19 @@
 <h1>New Rental for <%= @item.name %></h1>
 Renter: <%= @item.owner_name%>
-Daily Rate: <%= @item.price %>
+Hourly Rate: <%= @item.price %>
 
+<% if flash[:errors] %>
+  <% flash[:errors].each do |mess| %>
+  <%= mess %>
+  <% end %>
+<% end %>
 
 <%= form_for @renting do |f| %>
-  <%= f.label :pickup_date %>
-  <%= f.date_field :field %>
-  <%= f.label :dropoff_date %>
-  <%= f.date_field :field %>
+  <%= hidden_field_tag "item_id", "#{@item.id}" %>
+  <%= f.label :proposed_duration %>
+  <%= f.number_field :proposed_duration %>
 
   <%= f.submit %>
+  <% byebug %>
 
 <% end %>
