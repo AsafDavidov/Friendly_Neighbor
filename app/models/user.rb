@@ -11,13 +11,19 @@ class User < ApplicationRecord
 
   def reviews
     self.items.map do |item|
-      item.rentings.map do |renting|
-        renting.review
+      if !item.rentings.empty?
+        item.rentings.map do |renting|
+          renting.review if !renting.review.nil?
+        end
       end
-    end.flatten
+    end.flatten.delete_if {|el| el.nil?}
   end
 
   def five_recent_reviews
     reviews.sort_by(&:created_at).reverse.first(5)
+  end
+
+  def average_rating
+    reviews.map {|review| review.rating}.reduce(:+).to_f / reviews.count if !self.reviews.empty?
   end
 end

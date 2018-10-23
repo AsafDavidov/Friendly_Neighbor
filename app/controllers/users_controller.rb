@@ -1,5 +1,10 @@
 class UsersController < ApplicationController
   before_action :find_user, only: %w(show)
+
+  def index
+    @users = User.all
+  end
+
   def new
     @user = User.new
   end
@@ -23,7 +28,7 @@ class UsersController < ApplicationController
     else
       render 'show'
     end
-    
+
   end
 
 

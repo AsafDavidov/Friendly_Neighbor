@@ -23,4 +23,8 @@ class Renting < ApplicationRecord
     date = self.created_at + self.proposed_duration.hour
     date.localtime.strftime("Item due back on %m/%d/%Y, at %I:%M%p")
   end
+
+  def new_review
+    Review.new(:renting_id => self.id)
+  end
 end

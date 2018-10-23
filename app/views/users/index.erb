@@ -1,0 +1,6 @@
+<h1>Find a Neighbor</h1>
+
+<% @users.each do |user| %>
+  <%= link_to user.name, user_path(user) %>
+  <%= user.average_rating %><br>
+  <% end %>

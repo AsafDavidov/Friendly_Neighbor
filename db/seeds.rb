@@ -5,6 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+# User.destroy_all
+# Item.destroy_all
+# Image.destroy_all
+# Renting.destroy_all
+# Review.destroy_all
 User.create(name: "Asaf3", email: "asaf.com", address: "sock drawer", password: "socky_time", password_confirmation: "socky_time")
 
 User.create(name: "Asaf4", email: "asaf1.com", address: "sock drawer", password: "socky_time", password_confirmation: "socky_time")
@@ -26,3 +31,20 @@ Renting.create(item_id: 2, user_id: 4, proposed_duration: 3)
 
 Review.create(rating: 5, content: "thoroughly pleased", renting_id: 1)
 Review.create(rating: 5, content: "could have been better", renting_id: 2)
+
+
+
+Item.create(name: "ham sandwich", description: "has mustard sorry", user_id: 1, price: 34.0)
+  Item.last.rentings.build(user_id: 3, proposed_duration: 3000).save
+    Renting.last.new_review.update(rating: 2, content: "unsatisfactory condiments")
+Item.create(name: "pickle juice", description: "super salty", user_id: 1, price: 77.0)
+  Item.last.rentings.build(user_id: 3, proposed_duration: 0.02).save
+    Renting.last.new_review.update(rating: 5, content: "a delightful brine")
+  sleep(5)
+  Item.last.rentings.build(user_id: 3, proposed_duration: 3000).save
+    Renting.last.new_review.update(rating: 2, content: "need less salt")
+Item.create(name: "robot wife", description: "pretty good condition but has one hole", user_id: 1, price: 6.7)
+  Item.last.rentings.build(user_id: 3, proposed_duration: 0.01).save
+    Renting.last.new_review.update(rating: 4, content: "needs reprogramming")
+  Item.last.rentings.build(user_id: 3, proposed_duration: 0.01).save
+    Renting.last.new_review.update(rating: 5, content: "great user experience")
