@@ -4,4 +4,6 @@ Daily Rate: <%= @item.price %>
 Renter: <%= @item.owner_name %>
 Availiblity: <%= @item.available? %>
 
-<%= button_to "Rent Item", {controller: "rentings", action: "new"}, method: :get, params:{item_id: @item.id} if @item.available?%>
+<%= button_to "Rent Item", {controller: "rentings", action: "new"}, method: :get, params:{item_id: @item.id} if @item.available? && @item.user.id != session[:user_id]%>
+
+<%= button_to "Edit Item", edit_item_path(@item), method: :get if @item.user.id == session[:user_id]%>

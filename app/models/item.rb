@@ -1,8 +1,10 @@
 class Item < ApplicationRecord
   belongs_to :user ####Renter
-  has_many :images
+  has_many :images, dependent: :destroy
   has_many :rentings
   has_many :reviews, through: :rentings
+
+  accepts_nested_attributes_for :images
 
   def available?
     !self.rentings.any?{|renting| DateTime.now < renting.calculate_due_date}
