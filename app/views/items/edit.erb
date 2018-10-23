@@ -5,9 +5,8 @@
   <img src="<%=image.url %>" alt="">
   <%= button_to "Delete Image", image_path(image), method: :delete if @images.size > 1 %>
   <% end %>
-    <%= button_to "Add Image", new_image_path, method: :get, params: {:item_id => @item.id} %>
 <% end %>
-
+<%= button_to "Add Image", new_image_path, method: :get, params: {:item_id => @item.id} %>
 
 
 

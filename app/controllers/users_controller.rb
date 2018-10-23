@@ -24,6 +24,7 @@ class UsersController < ApplicationController
   def show
 
     if @user.id == session[:user_id]
+      @rentings = @user.rentings
       render 'session_user'
     else
       render 'show'

@@ -6,8 +6,7 @@ class RentingsController < ApplicationController
   end
 
   def create
-    find_item
-    @renting = @item.rentings.build(renting_params)
+    @renting = Renting.new(renting_params)
     @renting.user = get_user
     @renting.calculate_cost(@renting.proposed_duration)
     if @renting.save

@@ -1,7 +1,17 @@
-<h1>Your Confirmed renting!</h1>
+<% if @renting.calculate_due_date > DateTime.now %>
+  <h1>Your Confirmed renting!</h1>
+<% else %>
+  <h1>Your Past renting!</h1>
+  <%= button_to "Add a review", new_review_path, method: :get, params:{renting_id: @renting.id} %>
+<% end %>
+
 <h2>Product: <%= @renting.item.name %> </h2>
 <img src="<%=@renting.item.images.first.url%>" alt="">
 <h3>Total Price: $<%= @renting.display_cost %> </h3>
 <h3>Return Date: <%= @renting.display_due_date %> </h3>
 <h3>Your Friendly Neighbor <%= @renting.item.owner_name %>  </h3>
 <h3>Their address: <%= @renting.item.owner.address %> </h3>
+
+
+<%= @renting.review.content if @renting.review %><br>
+<%= @renting.review.rating if @renting.review %>

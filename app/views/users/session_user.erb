@@ -10,6 +10,11 @@
 <% end %>
 <%= button_to "Add New Item", new_item_path, method: :get %>
 
+<h3>My past rentings</h3>
+<% @rentings.each do |renting| %>
+  <%= link_to renting.item.name, renting_path(renting) %>
+<% end %>
+
 <h3>Most Recent Reviews</h3>
 <% @user.five_recent_reviews.each do |review| %>
 <%= review.rating %> <br>

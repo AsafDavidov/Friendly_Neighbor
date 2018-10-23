@@ -6,7 +6,6 @@ class ImagesController < ApplicationController
   end
 
   def create
-    byebug
     image = Image.create(image_params)
     redirect_to edit_item_path(image.item)
   end
