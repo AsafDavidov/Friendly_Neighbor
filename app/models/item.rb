@@ -5,7 +5,7 @@ class Item < ApplicationRecord
   has_many :reviews, through: :rentings
 
   def available?
-    !self.rentings.any?{|renting| renting.final_price == nil}
+    !self.rentings.any?{|renting| DateTime.now < renting.calculate_due_date}
   end
 
   def owner

@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  skip_before_action :require_login, only:[:welcome,:login,:create]
+
   def welcome
     return redirect_to controller: "items", action: "index" if !session[:user_id].nil?
     redirect_to controller: "sessions", action: "login"
