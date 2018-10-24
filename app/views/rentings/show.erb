@@ -2,7 +2,7 @@
   <h1>Your Confirmed renting!</h1>
 <% else %>
   <h1>Your Past renting!</h1>
-  <%= button_to "Add a review", new_review_path, method: :get, params:{renting_id: @renting.id} %>
+  <%= button_to "Add a review", new_review_path, method: :get, params:{renting_id: @renting.id} if !@renting.review%>
 <% end %>
 
 <h2>Product: <%= @renting.item.name %> </h2>
@@ -11,7 +11,10 @@
 <h3>Return Date: <%= @renting.display_due_date %> </h3>
 <h3>Your Friendly Neighbor <%= @renting.item.owner_name %>  </h3>
 <h3>Their address: <%= @renting.item.owner.address %> </h3>
+<h3>Email them: <%=@renting.item.owner.email %></h3>
 
 
 <%= @renting.review.content if @renting.review %><br>
-<%= @renting.review.rating if @renting.review %>
+<%= @renting.review.rating if @renting.review %><br>
+<%= button_to "Delete Review", review_path(@renting.review), method: :delete if @renting.user.id == session[:user_id] && @renting.review%>
+<%= button_to "Edit Review", edit_review_path(@renting.review), method: :get if @renting.user.id == session[:user_id] && @renting.review%>

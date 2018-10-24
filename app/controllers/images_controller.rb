@@ -7,6 +7,7 @@ class ImagesController < ApplicationController
 
   def create
     image = Image.create(image_params)
+    flash[:errors] = image.errors.full_messages if !image.valid?
     redirect_to edit_item_path(image.item)
   end
 

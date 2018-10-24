@@ -1,5 +1,6 @@
 <h1><%= @user.name %></h1>
 <h2> <%= @user.address %> </h2>
+<h2>Rating: <%=@user.average_rating %></h2>
 <h3>Listed Items:</h3>
 <% @user.items.each do |item| %>
   <%= item.name %><br>
@@ -10,6 +11,7 @@
 
 <h3>Most Recent Reviews</h3>
 <% @user.five_recent_reviews.each do |review| %>
-<%= review.rating %> <br>
-<%= review.content %> <br>
+  <%=review.renting.item.name  %><br>
+  <%= review.rating %> <br>
+  <%= review.content %> <br><br>
 <% end %>

@@ -1,4 +1,10 @@
 <h1>Edit Item</h1>
+<% if flash[:errors] %>
+  <%flash[:errors].each do |message| %>
+    <%= message %><br>
+  <% end %>
+<% end %><br>
+
 
 <% if !@images.empty? %>
   <% @images.each do |image| %>

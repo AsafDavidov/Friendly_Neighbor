@@ -8,12 +8,13 @@ class RentingsController < ApplicationController
   def create
     @renting = Renting.new(renting_params)
     @renting.user = get_user
-    @renting.calculate_cost(@renting.proposed_duration)
-    if @renting.save
+    @renting.save
+    if @renting.valid?
+      @renting.calculate_cost(@renting.proposed_duration)
       redirect_to renting_path(@renting)
     else
       flash[:errors] = @renting.errors.full_messages
-      redirect_to new_renting_path
+      redirect_to new_renting_path :item_id => @renting.item.id
     end
   end
 

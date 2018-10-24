@@ -1,12 +1,10 @@
 class Renting < ApplicationRecord
-  #validates :proposed_duration, numericality: {greater_than: 0}
+  validates :proposed_duration, numericality: {greater_than: 0}
   belongs_to :item
   belongs_to :user ######BORROWER
   has_one :review
 
   def calculate_cost(hours)
-    ####TODO: Hours are ahead by four hours for some reason
-    #total_hours = ((DateTime.current - DateTime.parse(Renting.first.created_at.to_s)).to_f*24).round(2)
     self.final_price = self.item.price.to_f * hours
     self.save
   end

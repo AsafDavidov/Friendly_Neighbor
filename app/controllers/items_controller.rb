@@ -25,8 +25,13 @@ class ItemsController < ApplicationController
   def create
     item = Item.new
     item.user_id = session[:user_id]
-    item.update(item_params)
-    redirect_to user_path(session[:user_id])
+    if item.update(item_params)
+      redirect_to item_path(item)
+    else
+      flash[:errors] = item.errors.full_messages
+      redirect_to new_item_path
+    end
+
   end
 
   def destroy

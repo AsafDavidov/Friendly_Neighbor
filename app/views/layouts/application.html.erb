@@ -11,7 +11,7 @@
 
   <body>
     <header>
-      <%= link_to "Browse Items", items_path %> <%= link_to "Find a Neighbor", users_path%> <%= link_to "Logout", controller: "sessions", action: "destroy"%> <%= link_to "My Profile", user_path(session[:user_id]) if session[:user_id]%>
+      <%= link_to "Browse Items", items_path %> <%= link_to "Find a Neighbor", users_path%> <%= link_to "Logout", controller: "sessions", action: "destroy"%> <%= link_to "My Profile", user_path(session[:user_id]) if session[:user_id]%> <%= User.find(session[:user_id]).name if session[:user_id] %>
     </header>
     <%= yield %>
   </body>

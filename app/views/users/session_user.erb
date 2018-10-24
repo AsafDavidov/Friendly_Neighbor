@@ -1,5 +1,6 @@
 <h1>Hello, <%= @user.name %>!</h1>
 <h2> <%= @user.address %> </h2>
+<h2>Rating: <%=@user.average_rating %></h2>
 <h3>Listed Items:</h3>
 <% @user.items.sort_by {|item| item.available? ? 1 : 0}.each do |item| %>
   <%= item.name %><br>
@@ -12,11 +13,15 @@
 
 <h3>My past rentings</h3>
 <% @rentings.each do |renting| %>
-  <%= link_to renting.item.name, renting_path(renting) %>
+  <%= link_to renting.item.name, renting_path(renting) %><br>
+  <%= renting.review.rating if renting.review %><br>
+  <%= "#{renting.review.content[0..50].strip}..." if renting.review %><br><br>
 <% end %>
 
 <h3>Most Recent Reviews</h3>
+<%= "No reviews have been posted!" if @user.five_recent_reviews.empty? %>
 <% @user.five_recent_reviews.each do |review| %>
+<%= review.renting.item.name %>
 <%= review.rating %> <br>
 <%= review.content %> <br>
 <% end %>
