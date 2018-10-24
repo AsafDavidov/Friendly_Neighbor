@@ -1,5 +1,6 @@
 <h1>Hello, <%= @user.name %>!</h1>
 <h2> <%= @user.address %> </h2>
+<%= button_to "Edit your Information", edit_user_path(@user), method: :get %>
 <h2>Rating: <%=@user.average_rating %></h2>
 <h3>Listed Items:</h3>
 <% @user.items.sort_by {|item| item.available? ? 1 : 0}.each do |item| %>

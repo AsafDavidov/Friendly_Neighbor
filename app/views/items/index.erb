@@ -1,19 +1,22 @@
 <h1>Items</h1>
 
 <h2>Available for Renting:</h2>
-
+<div class="items-container">
 <%= "Nothing is currently available for rent!" if @items.select {|item| item.available? && item.user_id != session[:user_id]}.empty? %>
 <% @items.select {|item| item.available?}.each do |item| %>
   <% if item.user.id != session[:user_id] %>
+    <span class="item">
     <%= link_to item.name, item_path(item) %><br>
     <%= item.description %><br>
     <%= item.user.name %><br>
-    <img src="<%= item.images.first.url if item.images.first%>" alt="sock"><br><br>
+    <img src="<%= item.images.first.url if item.images.first%>" alt="sock">
+  </span>
   <% end %>
 <% end %>
-
+</div>
 
 <h2>Currently being rented:</h2>
+<div class="items-container">
 <%= "Nothing is currently being rented!" if @items.select {|item| !item.available?}.empty? %>
 <% @items.select {|item| !item.available?}.each do |item| %>
   <% if item.user.id != session[:user_id] %>
@@ -23,3 +26,4 @@
     <img src="<%= item.images.first.url if item.images.first%>" alt="sock"><br><br>
   <% end %>
 <% end %>
+</div>

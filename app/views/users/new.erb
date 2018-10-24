@@ -5,13 +5,6 @@
   <%= mess %>
   <% end %>
 <% end %>
-<!-- # <%= form_tag controller: "users", action: "create" %>
-#   <%= label_tag :name, "Username" %> <%= text_field_tag :name %><br>
-#   <%= label_tag :password, "Password" %> <%= password_field_tag :password %><br>
-#   <%= label_tag :password_confirmation, "Confirm Password" %> <%= password_field_tag :password_confirmation %><br>
-#   <%= label_tag :email, "Email Address" %> <%= text_field_tag :email %><br>
-#   <%= label_tag :address, "Address" %> <%= text_field_tag :address, "Address" %><br>
-#   <%= submit_tag "Create Account" %><br> -->
 
   <%= form_for @user do |f| %>
   <%= f.label :name %><%= f.text_field :name %>

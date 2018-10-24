@@ -1,0 +1,16 @@
+<h1>Edit you information, <%= @user.name %> </h1>
+<% if flash[:errors] %>
+  <% flash[:errors].each do |mess| %>
+  <%= mess %>
+  <% end %>
+<% end %>
+
+  <%= form_for @user do |f| %>
+  <%= f.label :email %><%= f.text_field :email %>
+  <%= f.label :address %><%= f.text_field :address%><br>
+  <h4>Optional Change Password</h4>
+  <%= f.label :password %><%= f.password_field :password %>
+  <%= f.label :password_confirmation %>  <%= f.password_field :password_confirmation %><br>
+  <%= f.label :old_password %><%= f.password_field :old_password %>
+  <%= f.submit %>
+  <% end %>

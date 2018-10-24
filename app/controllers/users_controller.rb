@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :find_user, only: %w(show)
-
+  before_action :find_user, only: %w(show edit update)
+  skip_before_action :require_login, only:[:new,:create]
   def index
     @users = User.all
   end
@@ -10,7 +10,6 @@ class UsersController < ApplicationController
   end
 
   def create
-
     @user = User.create(user_params)
     if @user.save
       session[:user_id] = @user.id
@@ -32,6 +31,26 @@ class UsersController < ApplicationController
 
   end
 
+  def edit
+  end
+
+  def update
+    if @user.authenticate(params[:user][:old_password])
+      byebug
+      if @user.update(user_params)
+        byebug
+        @user.save
+        redirect_to user_path(@user)
+      else
+        byebug
+        flash[:errors] = @user.errors.full_messages
+        redirect_to edit_user_path(@user)
+      end
+    else
+      flash[:errors] = ["Incorrect original password"]
+      redirect_to edit_user_path(@user)
+    end
+  end
 
 
   private

@@ -22,6 +22,6 @@ class User < ApplicationRecord
   end
 
   def average_rating
-    reviews.map {|review| review.rating}.reduce(:+).to_f / reviews.count if !self.reviews.empty?
+    (reviews.map {|review| review.rating}.reduce(:+).to_f / reviews.count).round(1) if !self.reviews.empty?
   end
 end

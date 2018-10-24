@@ -13,3 +13,28 @@
  *= require_tree .
  *= require_self
  */
+header a{
+  background-color: grey;
+  color: blue;
+}
+.content-container{
+  width: 75%;
+  margin: auto;
+}
+
+.items-container{
+  height: 500px;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.items-container .item{
+  height: 40%;
+}
+
+.items-container .item img{
+  height: 100px;
+  width: 100px;
+}

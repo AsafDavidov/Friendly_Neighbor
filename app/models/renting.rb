@@ -1,5 +1,5 @@
 class Renting < ApplicationRecord
-  validates :proposed_duration, numericality: {greater_than: 0}
+  #validates :proposed_duration, numericality: {greater_than: 0}
   belongs_to :item
   belongs_to :user ######BORROWER
   has_one :review
