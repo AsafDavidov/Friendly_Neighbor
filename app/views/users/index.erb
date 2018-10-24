@@ -1,6 +1,11 @@
 <h1>Find a Neighbor</h1>
 
+<div class="users_container">
 <% @users.each do |user| %>
-  <%= link_to user.name, user_path(user) %>
-  <%= user.average_rating %><br>
-  <% end %>
+    <span class="user_container">
+      <a href="<%= user_path(user) %>"> <img src="<%= user.profile_picture %>" alt=""></a><br>
+      <%= link_to user.name, user_path(user) %><br>
+      <%= user.average_rating %><br>
+    </span>
+    <% end %>
+</div>

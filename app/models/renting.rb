@@ -1,4 +1,5 @@
 class Renting < ApplicationRecord
+  #TODO :Bring dis back fool
   #validates :proposed_duration, numericality: {greater_than: 0}
   belongs_to :item
   belongs_to :user ######BORROWER

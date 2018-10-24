@@ -20,10 +20,12 @@
 <%= "Nothing is currently being rented!" if @items.select {|item| !item.available?}.empty? %>
 <% @items.select {|item| !item.available?}.each do |item| %>
   <% if item.user.id != session[:user_id] %>
+    <span class="item">
     <%= link_to item.name, item_path(item) %><br>
     <%= item.description %><br>
     <%= item.user.name %><br>
-    <img src="<%= item.images.first.url if item.images.first%>" alt="sock"><br><br>
+    <img src="<%= item.images.first.url if item.images.first%>" alt="sock">
+    </span>
   <% end %>
 <% end %>
 </div>

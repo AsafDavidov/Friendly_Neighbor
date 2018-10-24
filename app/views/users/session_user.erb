@@ -1,28 +1,43 @@
-<h1>Hello, <%= @user.name %>!</h1>
-<h2> <%= @user.address %> </h2>
-<%= button_to "Edit your Information", edit_user_path(@user), method: :get %>
-<h2>Rating: <%=@user.average_rating %></h2>
+<span class = "user_details">
+  <h1>Hello, <%= @user.name %>!</h1>
+  <h2> <%= @user.address %> </h2>
+  <%= button_to "Edit your Information", edit_user_path(@user), method: :get %>
+  <h2>Rating: <%=@user.average_rating %></h2>
+</span>
+<img src="<%= @user.profile_picture %>" alt="">
 <h3>Listed Items:</h3>
+<div class="items-container">
 <% @user.items.sort_by {|item| item.available? ? 1 : 0}.each do |item| %>
+  <span class="item">
   <%= item.name %><br>
   <a href="<%=item_path(item)%>"> <img src="<%= item.images.first.url if item.images.first%>" alt="" ></a><br>
   <%= item.description %><br>
   <%= item.available? %> <br>
   <%= button_to "Delete Item", item_path(item), method: :delete %> <%= button_to "Edit Item", edit_item_path(item), method: :get%>
+  </span>
 <% end %>
+</div>
 <%= button_to "Add New Item", new_item_path, method: :get %>
 
 <h3>My past rentings</h3>
-<% @rentings.each do |renting| %>
-  <%= link_to renting.item.name, renting_path(renting) %><br>
-  <%= renting.review.rating if renting.review %><br>
-  <%= "#{renting.review.content[0..50].strip}..." if renting.review %><br><br>
-<% end %>
-
+<div class="rentings_container">
+  <% @rentings.each do |renting| %>
+    <div>
+    Rented Item: <%= link_to renting.item.name, renting_path(renting) %><br>
+    Rating: <%= renting.review.rating if renting.review %><br>
+    <%= "#{renting.review.content[0..500].strip}..." if renting.review && renting.review.content.length > 500%>
+    <%= "#{renting.review.content}" if renting.review && renting.review.content.length < 500%><br><br>
+    </div>
+  <% end %>
+</div>
 <h3>Most Recent Reviews</h3>
-<%= "No reviews have been posted!" if @user.five_recent_reviews.empty? %>
-<% @user.five_recent_reviews.each do |review| %>
-<%= review.renting.item.name %>
-<%= review.rating %> <br>
-<%= review.content %> <br>
+<div class="rentings_container">
+    <%= "No reviews have been posted!" if @user.five_recent_reviews.empty? %>
+    <% @user.five_recent_reviews.each do |review| %>
+    <div>
+    Rented Item: <%= review.renting.item.name %> <br>
+    Rating: <%= review.rating %> <br>
+    <%= "#{review.renting.user.name}'s Notes: " %> <%= review.content %> <br>
+  </div>
 <% end %>
+</div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_22_145359) do
+ActiveRecord::Schema.define(version: 2018_10_24_203258) do
 
   create_table "images", force: :cascade do |t|
     t.integer "item_id"
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 2018_10_22_145359) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "profile_picture", default: "http://static1.squarespace.com/static/59f7a47164b05ff7f0811b2e/5a04f1d8e4966b4a082805f0/5a0e525424a694cb083593b7/1513569850034/sil-VMartinez.jpg?format=1000w"
   end
 
 end

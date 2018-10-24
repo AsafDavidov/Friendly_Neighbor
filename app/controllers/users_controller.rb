@@ -36,13 +36,10 @@ class UsersController < ApplicationController
 
   def update
     if @user.authenticate(params[:user][:old_password])
-      byebug
       if @user.update(user_params)
-        byebug
-        @user.save
+        
         redirect_to user_path(@user)
       else
-        byebug
         flash[:errors] = @user.errors.full_messages
         redirect_to edit_user_path(@user)
       end
@@ -56,7 +53,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :address, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :address, :email, :password, :password_confirmation, :profile_picture)
   end
 
   def find_user
