@@ -26,6 +26,12 @@ body{
   background-size: cover;
   font-
 }
+
+form * {
+  margin: 1% 2% 1%;
+}
+
+
 .navbar{
   list-style-type: none;
   margin: 0;
@@ -86,6 +92,7 @@ body{
   flex-wrap: wrap;
   box-shadow: 1px 1px 10px #999;
   margin-bottom: 3%;
+  white-space: nowrap;
 }
 
 .items-container .item{
@@ -96,11 +103,20 @@ body{
   background-color: grey;
   padding: 10px;
   text-align: center;
+  overflow-x: hidden;
 }
 
 .items-container .item img{
   height: 100px;
   width: 100px;
+}
+
+.item .button_to {
+  width: 50%;
+  float: left;
+  display: inline;
+  margin: 0px;
+  padding: 0px;
 }
 
 .users_container{

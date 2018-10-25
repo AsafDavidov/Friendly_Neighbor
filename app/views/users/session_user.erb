@@ -12,7 +12,7 @@
   <%= item.name %><br>
   <a href="<%=item_path(item)%>"> <img src="<%= item.images.first.url if item.images.first%>" alt="" ></a><br>
   <%= item.description %><br>
-  <%= item.available? %> <br>
+  <%= item.available? ? "Available" : "Unavailable" %> <br>
   <%= button_to "Delete Item", item_path(item), method: :delete %> <%= button_to "Edit Item", edit_item_path(item), method: :get%>
   </span>
 <% end %>
