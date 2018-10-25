@@ -6,7 +6,7 @@
 <% end %>
 
 <h2>Product: <%= @renting.item.name %> </h2>
-<img src="<%=@renting.item.images.first.url%>" alt="">
+<img src="<%=@renting.item.images.first.url%>" alt="" class="float-left">
 <h3>Total Price: $<%= @renting.display_cost %> </h3>
 <h3>Return Date: <%= @renting.display_due_date %> </h3>
 <h3>Your Friendly Neighbor <%= @renting.item.owner_name %>  </h3>
