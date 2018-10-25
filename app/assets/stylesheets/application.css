@@ -145,9 +145,13 @@ a {
 .items-container .item{
   height: 40%;
   width: 200px;
-  border-radius: 8px;
+  border-radius: 5px;
+  border-style: solid;
+  border-color: #7a95c1;
+  border-width: 1px;
   margin: 15px;
-  background-color: #1287A8;
+  background-color: #90b0e5;
+  text-shadow: 1px 1px 3px #000;
   padding: 10px 10px 0px;
   box-shadow: 5px 5px 8px #999;
   text-align: center;
@@ -193,9 +197,12 @@ a {
   height: 40%;
   width: 200px;
   margin: 15px;
-  background-color: grey;
+  background-color: #90b0e5;
+  text-shadow: 1px 1px 3px #000;
   padding: 10px;
   text-align: center;
+  box-shadow: 5px 5px 10px #999;
+  border-radius: 5px;
 }
 
 .users_container .user_container img{
@@ -236,6 +243,10 @@ a {
   float: left;
   display: inline;
   margin: 1% 2% 1%;
+}
+
+.float-right {
+  float: right;
 }
 
 .button_margins {
