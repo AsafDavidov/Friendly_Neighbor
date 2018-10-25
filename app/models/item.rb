@@ -22,4 +22,11 @@ class Item < ApplicationRecord
     self.user.name
   end
 
+  def self.search(term)
+    if term
+      where('name LIKE ?', "%#{term}%").order('id DESC')
+    else
+      order('id DESC')
+    end
+  end
 end

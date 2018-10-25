@@ -5,8 +5,8 @@ class Renting < ApplicationRecord
   belongs_to :user ######BORROWER
   has_one :review
 
-  def calculate_cost(hours)
-    self.final_price = self.item.price.to_f * hours
+  def calculate_cost
+    self.final_price = self.item.price.to_f * self.proposed_duration
     self.save
   end
 

@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
   before_action :find_item, only: %w(show destroy edit update)
 
   def index
-    @items = Item.all
+    @items = Item.search(params[:term])
   end
 
   def show

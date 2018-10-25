@@ -10,7 +10,7 @@ class RentingsController < ApplicationController
     @renting.user = get_user
     @renting.save
     if @renting.valid?
-      @renting.calculate_cost(@renting.proposed_duration)
+      @renting.calculate_cost
       redirect_to renting_path(@renting)
     else
       flash[:errors] = @renting.errors.full_messages

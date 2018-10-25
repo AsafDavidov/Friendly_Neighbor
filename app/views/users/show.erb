@@ -11,7 +11,7 @@
   <%= item.name %><br>
   <a href="<%=item_path(item)%>"> <img src="<%= item.images.first.url %>" alt="" ></a><br>
   <%= item.description %><br>
-  <%= item.available? %> <br>
+  <%= item.available? ? "Available" : "Not Available" %> <br>
   </span>
 <% end %>
 </div>

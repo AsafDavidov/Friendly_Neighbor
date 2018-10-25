@@ -12,7 +12,7 @@
   <%= f.label :price %><%= f.number_field :price %>
     <%= f.fields_for :images do |ff| %>
       <%= ff.label :url %>
-      <%= ff.text_field :url %>
+      <%= ff.text_field :url%>
       <% end %>
-  <%= f.submit "Post Item"  %>
+  <%= f.submit "Post Item", class: "clear"%>
   <% end %>

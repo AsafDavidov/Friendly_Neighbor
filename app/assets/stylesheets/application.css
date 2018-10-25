@@ -36,8 +36,22 @@ img{
   box-shadow: 3px 3px 5px #999;
   max-width: 50%;
 }
-form * {
-  margin: 1% 2% 1%;
+
+label{
+    display: inline-block;
+    float: left;
+    clear: left;
+    width: 170px;
+    text-align: left;
+}
+input {
+  display: inline-block;
+  float: left;
+}
+
+.clear{
+  clear: both;
+  margin-top: 5px;
 }
 
 h2 + img {

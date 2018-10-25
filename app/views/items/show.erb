@@ -4,7 +4,7 @@
 <% end %><br>
 <h3>Daily Rate: <%= @item.price %></h3>
 <h3>Renter: <%= @item.owner_name %></h3>
-<h3>Availablity: <%= @item.available? %></h3>
+<h3>Availablity: <%= @item.available? ? "Available" : "Not Available" %> </h3>
 
 <%= button_to "Rent Item", {controller: "rentings", action: "new"}, method: :get, params:{item_id: @item.id} if @item.available? && @item.user.id != session[:user_id]%>
 

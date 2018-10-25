@@ -1,7 +1,7 @@
 <h1>Find a Neighbor</h1>
 
 <div class="users_container">
-<% @users.each do |user| %>
+<% @users.select{|user|user.id!=session[:user_id]}.each do |user| %>
     <span class="user_container">
       <a href="<%= user_path(user) %>"> <img src="<%= user.profile_picture %>" alt=""></a><br>
       <%= link_to user.name, user_path(user) %><br>
