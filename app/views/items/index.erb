@@ -29,7 +29,7 @@
     <%= link_to item.name, item_path(item) %><br>
     <%= item.description %><br>
     <%= item.user.name %><br>
-    <img src="<%= item.images.first.url if item.images.first%>" alt="sock">
+    <%= link_to item_path(item) do%><img src="<%= item.images.first.url if item.images.first%>" alt="sock"><% end %>
     </span>
   <% end %>
 <% end %>

@@ -21,7 +21,11 @@ header a{
   background-color: grey;
   color: blue;
 }
-
+footer{
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+  color: gainsboro;
+}
 body {
   background-image: url("http://t.wallpaperweb.org/wallpaper/buildings/1920x1200/01860_sanfrancisco.jpg");
   background-size: cover;
@@ -62,6 +66,9 @@ h3 {
   margin-left: 2%;
 }
 
+a {
+  color: blue;
+}
 
 .navbar{
   list-style-type: none;
@@ -127,6 +134,7 @@ h3 {
   box-shadow: 1px 1px 10px #999;
   margin-bottom: 3%;
   white-space: nowrap;
+  align-content: flex-start;
 }
 
 .items-container .item{
@@ -139,6 +147,7 @@ h3 {
   text-align: center;
   overflow-x: hidden;
   overflow-y: hidden;
+
 }
 
 .items-container .item img{
