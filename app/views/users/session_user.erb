@@ -5,7 +5,7 @@
   <h2>Rating: <%=@user.average_rating %></h2>
 </span>
 <img src="<%= @user.profile_picture %>" alt="">
-<h3>Listed Items:</h3>
+<h3>Listed Items </h3><%= button_to "Add New Item", new_item_path, method: :get %>
 <div class="items-container">
 <% @user.items.sort_by {|item| item.available? ? 1 : 0}.each do |item| %>
   <span class="item">
@@ -17,7 +17,7 @@
   </span>
 <% end %>
 </div>
-<%= button_to "Add New Item", new_item_path, method: :get %>
+
 
 <h3>My past rentings</h3>
 <div class="rentings_container">

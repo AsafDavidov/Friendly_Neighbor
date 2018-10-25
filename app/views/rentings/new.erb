@@ -1,6 +1,6 @@
 <h1>New Rental for <%= @item.name %></h1>
-Renter: <%= @item.owner_name%>
-Hourly Rate: <%= @item.price %><br>
+<h3>Renter: <%= @item.owner_name%></h3>
+<h3>Hourly Rate: <%= @item.price %></h3>
 
 <% if flash[:errors] %>
   <% flash[:errors].each do |mess| %>
@@ -10,7 +10,7 @@ Hourly Rate: <%= @item.price %><br>
 
 <%= form_for @renting do |f| %>
   <%= f.hidden_field :item_id, value: @renting.item_id%>
-  <%= f.label :proposed_duration %>
+  <%= f.label :proposed_duration, "Rental Time (Hours)" %>
   <%= f.number_field :proposed_duration %>
 
   <%= f.submit %>
