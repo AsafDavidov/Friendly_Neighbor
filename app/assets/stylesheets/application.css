@@ -143,9 +143,11 @@ form * {
   width: 100px;
 }
 
-img {
+.user_details + img {
   height: 300px;
   width: 400px;
+  margin-left: 150px;
+  margin-top: 20px;
 }
 .rentings_container{
   width: 100%;
