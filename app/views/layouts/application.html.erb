@@ -7,12 +7,18 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Lato" rel="stylesheet">
   </head>
 
   <body>
-    <header>
-      <%= link_to "Browse Items", items_path %> <%= link_to "Find a Neighbor", users_path%> <%= link_to "Logout", controller: "sessions", action: "destroy"%> <%= link_to "My Profile", user_path(session[:user_id]) if session[:user_id]%> <%= User.find(session[:user_id]).name if session[:user_id] %>
-    </header>
+    <ul class="navbar">
+      <li id="logo"> <%= "FriendlyNeighbor" %> </li>
+      <li><%= link_to "Browse Items", items_path %> </li>
+      <li><%= link_to "Find a Neighbor", users_path%> </li>
+      <li><%= link_to "Logout", controller: "sessions", action: "destroy"if session[:user_id]%></li>
+      <li><%= link_to "My Profile", user_path(session[:user_id]) if session[:user_id]%> </li>
+      <li id="name"><%= "Hello, #{User.find(session[:user_id]).name}" if session[:user_id] %></li>
+    </ul>
     <div class="content-container">
 
      <%= yield %></div>
