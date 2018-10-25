@@ -7,11 +7,11 @@
 <% end %>
 
   <%= form_for @user do |f| %>
-  <%= f.label :name %><%= f.text_field :name %>
-  <%= f.label :email %><%= f.text_field :email %>
-  <%= f.label :address %><%= f.text_field :address%>
-  <%= f.label :profile_picture %><%= f.text_field :profile_picture%>
-  <%= f.label :password %><%= f.password_field :password %>
-  <%= f.label :password_confirmation %>  <%= f.password_field :password_confirmation %>
+  <%= f.label :name %><%= f.text_field :name %><br>
+  <%= f.label :email %><%= f.text_field :email %><br>
+  <%= f.label :address %><%= f.text_field :address%><br>
+  <%= f.label :profile_picture %><%= f.text_field :profile_picture%><br>
+  <%= f.label :password %><%= f.password_field :password %><br>
+  <%= f.label :password_confirmation %>  <%= f.password_field :password_confirmation %><br>
   <%= f.submit %>
   <% end %>
