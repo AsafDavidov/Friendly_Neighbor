@@ -135,7 +135,7 @@ h3 {
   border-radius: 8px;
   margin: 15px;
   background-color: gainsboro;
-  padding: 10px;
+  padding: 0 10px;
   text-align: center;
   overflow-x: hidden;
   overflow-y: hidden;
@@ -144,8 +144,13 @@ h3 {
 .items-container .item img{
   height: 125px;
   width: 150px;
-  margin-top: 11px;
+  margin-top: 5px;
   max-width: 100%;
+}
+
+.items-container .item p{
+  margin-bottom: 5px;
+  margin-top: 0px;
 }
 
 .item .button_to {
@@ -179,11 +184,12 @@ h3 {
   width: 100px;
 }
 
-.user_details + img {
-  height: 300px;
-  width: 400px;
-  margin-left: 150px;
+#profile_picture {
+  width: 50%;
+  height: auto;
   margin-top: 20px;
+  display: inline-block;
+  clear: right;
 }
 .rentings_container{
   width: 100%;
@@ -204,13 +210,22 @@ h3 {
 }
 .user_details{
   float: left;
-  padding-right: 250px;
+  width: 45%;
 }
 
 .float-left {
   float: left;
   display: inline;
   margin: 1% 2% 1%;
+}
+
+.button_margins {
+  margin-left: 5%;
+  margin-bottom: 5%;
+}
+
+.clear-both{
+  clear: both;
 }
 
 .clearfix::after {
