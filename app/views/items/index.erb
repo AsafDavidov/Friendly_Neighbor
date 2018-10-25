@@ -1,9 +1,11 @@
 <h1>Items</h1>
 <br>
+<div class="float-right">
 <%= form_tag(items_path, method: :get) do %>
   <%= text_field_tag :term, params[:term] %>
   <%= submit_tag 'Search', name: nil %>
 <% end %> <br>
+</div>
 
 <h2>Available for Renting:</h2>
 <div class="items-container">
