@@ -21,12 +21,17 @@ header a{
   background-color: grey;
   color: blue;
 }
-
+footer{
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+  color: gainsboro;
+}
 body {
   background-image: url("http://t.wallpaperweb.org/wallpaper/buildings/1920x1200/01860_sanfrancisco.jpg");
   background-size: cover;
   background-color: gainsboro;
   font-family: 'Lato', sans-serif;
+  color: #F0FFFF;
 }
 
 img{
@@ -56,12 +61,19 @@ input {
 
 h2 + img {
   margin-left: 2%;
+  color: black;
 }
-
-h3 {
+h1{
+  color:#3C6478;
+}
+h2,h3 {
   margin-left: 2%;
+  color:#3C6478;
 }
 
+a {
+  color: #EBC944;
+}
 
 .navbar{
   list-style-type: none;
@@ -127,6 +139,7 @@ h3 {
   box-shadow: 1px 1px 10px #999;
   margin-bottom: 3%;
   white-space: nowrap;
+  align-content: flex-start;
 }
 
 .items-container .item{
@@ -134,11 +147,17 @@ h3 {
   width: 200px;
   border-radius: 8px;
   margin: 15px;
-  background-color: gainsboro;
-  padding: 0 10px;
+  background-color: #1287A8;
+  padding: 10px 10px 0px;
+  box-shadow: 5px 5px 8px #999;
   text-align: center;
   overflow-x: hidden;
   overflow-y: hidden;
+  font-size: 80%;
+}
+
+.items-container .item a{
+  font-size: 125%;
 }
 
 .items-container .item img{
@@ -146,6 +165,7 @@ h3 {
   width: 150px;
   margin-top: 5px;
   max-width: 100%;
+  padding-bottom: 0px;
 }
 
 .items-container .item p{
@@ -160,7 +180,6 @@ h3 {
   margin: 0px;
   padding: 0px;
 }
-
 
 .users_container{
   width: 100%;
