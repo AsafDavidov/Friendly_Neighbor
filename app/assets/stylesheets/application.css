@@ -31,6 +31,7 @@ body {
   background-size: cover;
   background-color: gainsboro;
   font-family: 'Lato', sans-serif;
+  color: #F0FFFF;
 }
 
 img{
@@ -60,14 +61,18 @@ input {
 
 h2 + img {
   margin-left: 2%;
+  color: black;
 }
-
-h3 {
+h1{
+  color:#3C6478;
+}
+h2,h3 {
   margin-left: 2%;
+  color:#3C6478;
 }
 
 a {
-  color: blue;
+  color: #EBC944;
 }
 
 .navbar{
@@ -142,12 +147,16 @@ a {
   width: 200px;
   border-radius: 8px;
   margin: 15px;
-  background-color: gainsboro;
+  background-color: #1287A8;
   padding: 10px;
   text-align: center;
   overflow-x: hidden;
   overflow-y: hidden;
+  font-size: 80%;
+}
 
+.items-container .item a{
+  font-size: 125%;
 }
 
 .items-container .item img{
@@ -164,7 +173,6 @@ a {
   margin: 0px;
   padding: 0px;
 }
-
 
 .users_container{
   width: 100%;
