@@ -34,6 +34,7 @@ img{
   border-color: black;
   border-width: 1px;
   box-shadow: 3px 3px 5px #999;
+  max-width: 50%;
 }
 form * {
   margin: 1% 2% 1%;
@@ -117,17 +118,20 @@ h3 {
 .items-container .item{
   height: 40%;
   width: 200px;
-  border-radius: 25px;
+  border-radius: 8px;
   margin: 15px;
   background-color: gainsboro;
   padding: 10px;
   text-align: center;
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .items-container .item img{
-  height: 100px;
-  width: 100px;
+  height: 125px;
+  width: 150px;
+  margin-top: 11px;
+  max-width: 100%;
 }
 
 .item .button_to {
