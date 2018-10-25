@@ -1,18 +1,27 @@
+<span class = "user_details">
 <h1><%= @user.name %></h1>
-<img src="<%= @user.profile_picture %>" alt="">
 <h2> <%= @user.address %> </h2>
 <h2>Rating: <%=@user.average_rating %></h2>
+</span>
+<img src="<%= @user.profile_picture %>" alt="">
 <h3>Listed Items:</h3>
+<div class="items-container">
 <% @user.items.each do |item| %>
+  <span class="item">
   <%= item.name %><br>
   <a href="<%=item_path(item)%>"> <img src="<%= item.images.first.url %>" alt="" ></a><br>
   <%= item.description %><br>
   <%= item.available? %> <br>
+  </span>
 <% end %>
-
+</div>
 <h3>Most Recent Reviews</h3>
+<div class="rentings_container">
 <% @user.five_recent_reviews.each do |review| %>
-  <%=review.renting.item.name  %><br>
-  <%= review.rating %> <br>
-  <%= review.content %> <br><br>
+  <div>
+    <%=review.renting.item.name  %><br>
+    <%= review.rating %> <br>
+    <%= review.content %>
+  </div>
 <% end %>
+</div>

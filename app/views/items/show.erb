@@ -1,7 +1,9 @@
 <h1> <%= @item.name %> </h1>
-<%= image_tag @item.images.first.url %><br>
-Daily Rate: <%= @item.price %>
-Renter: <%= @item.owner_name %>
+<% @item.images.each do |image| %>
+<%= image_tag image.url %>
+<% end %><br>
+Daily Rate: <%= @item.price %><br>
+Renter: <%= @item.owner_name %><br>
 Availiblity: <%= @item.available? %>
 
 <%= button_to "Rent Item", {controller: "rentings", action: "new"}, method: :get, params:{item_id: @item.id} if @item.available? && @item.user.id != session[:user_id]%>

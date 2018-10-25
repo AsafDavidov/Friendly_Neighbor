@@ -1,4 +1,4 @@
-<h1>Items</h1>
+<h1>Items:</h1>
 
 <h2>Available for Renting:</h2>
 <div class="items-container">
@@ -8,7 +8,7 @@
     <span class="item">
     <%= link_to item.name, item_path(item) %><br>
     <%= item.description %><br>
-    <%= item.user.name %><br>
+    <%= item.user.name %><br><br>
     <img src="<%= item.images.first.url if item.images.first%>" alt="sock">
   </span>
   <% end %>
