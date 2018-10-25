@@ -21,15 +21,30 @@ header a{
   background-color: grey;
   color: blue;
 }
-body{
+
+body {
   background-image: url("http://t.wallpaperweb.org/wallpaper/buildings/1920x1200/01860_sanfrancisco.jpg");
   background-size: cover;
   background-color: gainsboro;
   font-family: 'Lato', sans-serif;
 }
 
+img{
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  box-shadow: 3px 3px 5px #999;
+}
 form * {
   margin: 1% 2% 1%;
+}
+
+h2 + img {
+  margin-left: 2%;
+}
+
+h3 {
+  margin-left: 2%;
 }
 
 
