@@ -24,7 +24,7 @@
 
 <h2>Currently being rented:</h2>
 <div class="items-container">
-<%= "Nothing is currently being rented!" if @items.select {|item| !item.available?}.empty? %>
+<div class="center"><%= "Nothing is currently being rented!" if @items.select {|item| !item.available?}.empty? %></div>
 <% @items.select {|item| !item.available?}.each do |item| %>
   <% if item.user.id != session[:user_id] %>
     <span class="item">

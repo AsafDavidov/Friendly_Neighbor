@@ -279,3 +279,12 @@ a {
   height: 2em;
   border-style: none;
 }
+
+.items-container > .center {
+  display: inline-block;
+  width: auto;
+  margin: auto auto;
+  height: 2em;
+  border-style: none;
+  color: black;
+}
