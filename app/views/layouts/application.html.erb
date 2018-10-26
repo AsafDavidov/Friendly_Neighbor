@@ -12,7 +12,7 @@
 
   <body>
     <ul class="navbar">
-      <li id="logo"> <%= "FriendlyNeighbor" %> </li>
+      <li id="logo"> <%= link_to "FriendlyNeighbor", controller: "sessions", action:"welcome" %> </li>
       <li><%= link_to "Logout", controller: "sessions", action: "destroy"if session[:user_id]%></li>
       <li><%= link_to "My Profile", user_path(session[:user_id]) if session[:user_id]%> </li>
       <li><%= link_to "Find a Neighbor", users_path%> </li>
@@ -24,6 +24,6 @@
      <%= yield %></div>
   </body>
   <footer>
-     &copy; 2018 FriendlyNeighbor.com 
+     &copy; 2018 FriendlyNeighbor.com
   </footer>
 </html>

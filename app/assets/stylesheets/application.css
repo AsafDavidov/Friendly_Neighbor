@@ -105,6 +105,16 @@ a:hover {
   padding-left: 20px;
   padding-bottom: 10px;
 }
+#logo a{
+  text-align: center;
+  padding-top: 0px;
+  height: 100%;
+  padding-bottom: 0px;
+  display: inline-block;
+}
+#logo a:hover{
+  background-color: #333;
+}
 .navbar li a{
   display: inline-block;
   color: white;
