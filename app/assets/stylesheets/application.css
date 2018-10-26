@@ -80,7 +80,11 @@ h4{
   color:#3C6478;
 }
 a {
-  color: #EBC944;
+  color:#3C6478;
+  text-decoration: none;
+}
+a:hover {
+  color: #EBC944;;
 }
 
 .navbar{
@@ -123,6 +127,7 @@ a {
 .content-container{
   width: 75%;
   margin: auto;
+  margin-top: 2%;
   background-color: AliceBlue;
   box-shadow: 1px 1px 10px #ffffff;
   padding: 0% 1% 1%;
@@ -172,6 +177,7 @@ a {
 
 .items-container .item a{
   font-size: 125%;
+  color: #EBC944;
 }
 
 .items-container .item img{
