@@ -3,7 +3,7 @@ class Item < ApplicationRecord
   validates :description, presence: true
   validates :price, presence: true, numericality: {greater_than: 0}
 
-  belongs_to :user ####Renter
+  belongs_to :user
   has_many :images, dependent: :destroy
   has_many :rentings
   has_many :reviews, through: :rentings
