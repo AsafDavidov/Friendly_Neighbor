@@ -1,24 +1,18 @@
-# README
+# Friendly Neighbor
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Welcome to the Friendly Neighbor
 
-Things you may want to cover:
+## Short Description
+Friendly Neighbor is a website where users can rent items for certain amounts of time from other users. Additionally, after an item has been rented and returned to the original owner, a user can leave a review about his or her experience with the item.
 
-* Ruby version
 
-* System dependencies
 
-* Configuration
+## Install Instructions
+ATTAC uses the standard rails gems, along with faker, rspec-rails, database_cleaner, and pry were installed. simply run bundle install to bring in all the necessary gems
 
-* Database creation
+## Run Instructions
+This is a Ruby on Rails app, you will have to locally migrate and seed the data by running 'rake db:migrate' and then 'rake db:seed'. In order to use the website, simply fire up the rails localhost server and go to the assigned port. (Rails defaults this to 3000)
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## License
+This software is available under the following licenses:
+ * MIT

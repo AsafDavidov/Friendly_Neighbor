@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  resources :images
-  resources :rentings
-  resources :reviews
+  resources :images, only: [:new,:create,:destroy]
+  resources :rentings, only: [:new,:create,:show]
+  resources :reviews, only: [:new,:create, :edit, :update, :destroy]
   resources :items
   resources :users
 

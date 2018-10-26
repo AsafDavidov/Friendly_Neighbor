@@ -5,7 +5,7 @@ class User < ApplicationRecord
 
 
   has_secure_password
-  has_many :items #As a renter
+  has_many :items, dependent: :destroy #As a renter
   has_many :rentings #as a borrower
 
   def reviews

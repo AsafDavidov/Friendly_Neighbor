@@ -9,9 +9,12 @@
   <%= f.label :email %><%= f.text_field :email %> <br>
   <%= f.label :address %><%= f.text_field :address%> <br>
   <%= f.label :profile_picture %><%= f.text_field :profile_picture%><br>
+  <br>
   <h4>Optional Change Password</h4>
-  <%= f.label :password %><%= f.password_field :password %><br>
-  <%= f.label :password_confirmation %>  <%= f.password_field :password_confirmation %><br>
-  <%= f.label :old_password %><%= f.password_field :old_password %>
+  <%= f.label :password %><%= f.password_field :password, placeholder: "Optional"%><br>
+  <%= f.label :password_confirmation %>  <%= f.password_field :password_confirmation, placeholder: "Optional" %><br>
+  <%= f.label :old_password %><%= f.password_field :old_password, placeholder: "Required for all updates" %>
   <%= f.submit "Update", class: "clear"%>
   <% end %>
+<br>
+  <%= button_to "Delete your Account", user_path(@user), method: :delete, data: {confirm: "Are you sure?"} %>

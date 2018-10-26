@@ -76,7 +76,9 @@ h2,h3 {
   margin-left: 2%;
   color:#3C6478;
 }
-
+h4{
+  color:#3C6478;
+}
 a {
   color: #EBC944;
 }

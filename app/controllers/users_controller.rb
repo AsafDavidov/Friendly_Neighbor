@@ -37,7 +37,7 @@ class UsersController < ApplicationController
   def update
     if @user.authenticate(params[:user][:old_password])
       if @user.update(user_params)
-        
+
         redirect_to user_path(@user)
       else
         flash[:errors] = @user.errors.full_messages
@@ -47,6 +47,13 @@ class UsersController < ApplicationController
       flash[:errors] = ["Incorrect original password"]
       redirect_to edit_user_path(@user)
     end
+  end
+
+  def destroy
+    user = User.find(session[:user_id])
+    user.destroy
+    reset_session
+    redirect_to controller: "sessions", action: "welcome"
   end
 
 
