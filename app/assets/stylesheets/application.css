@@ -236,6 +236,9 @@ a:hover {
   height: 100px;
   width: 100px;
 }
+.users_container .user_container a{
+  color: #EBC944;
+}
 
 #profile_picture {
   width: 50%;

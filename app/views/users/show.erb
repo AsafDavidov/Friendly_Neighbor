@@ -1,9 +1,11 @@
-<span class = "user_details">
-<h1><%= @user.name %></h1>
-<h2> <%= @user.address %> </h2>
-<h2>Rating: <%=@user.average_rating %></h2>
-</span>
-<img src="<%= @user.profile_picture %>" alt="">
+<div class = "clearfix">
+  <span class = "user_details">
+  <h1><%= @user.name %></h1>
+  <h2> <%= @user.address %> </h2>
+  <h2>Rating: <%=@user.average_rating %></h2>
+  </span>
+  <img src="<%= @user.profile_picture %>" alt="">
+</div>
 <h3>Listed Items:</h3>
 <div class="items-container">
 <% @user.items.each do |item| %>

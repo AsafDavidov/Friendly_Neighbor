@@ -1,11 +1,12 @@
-<span class = "user_details">
-  <h1>Hello, <%= @user.name %>!</h1>
-  <h2> <%= @user.address %> </h2>
-  <h2>Rating: <%=@user.average_rating %></h2>
-  <%= button_to "Edit your Information", edit_user_path(@user), method: :get %>
-</span>
-<img src="<%= @user.profile_picture %>" id="profile_picture">
-
+<div class = "clearfix">
+  <span class = "user_details">
+    <h1>Hello, <%= @user.name %>!</h1>
+    <h2> <%= @user.address %> </h2>
+    <h2>Rating: <%=@user.average_rating %></h2>
+    <%= button_to "Edit your Information", edit_user_path(@user), method: :get %>
+  </span>
+  <img src="<%= @user.profile_picture %>" id="profile_picture">
+</div>
 
 <h3>Listed Items </h3>
 <div class="button_margins"><%= button_to "Add New Item", new_item_path, method: :get %></div>
