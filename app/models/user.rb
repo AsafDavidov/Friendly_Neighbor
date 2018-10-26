@@ -23,6 +23,6 @@ class User < ApplicationRecord
   end
 
   def average_rating
-    !self.reviews.empty? ? (reviews.map {|review| review.rating}.reduce(:+).to_f / reviews.count).round(2) : "No reviews yet!"
+    !self.reviews.empty? ? sprintf("%.2f", (reviews.map {|review| review.rating}.reduce(:+).to_f / reviews.count).round(2)) : "No reviews yet!"
   end
 end
