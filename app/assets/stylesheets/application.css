@@ -31,7 +31,6 @@ body {
   background-size: cover;
   background-color: gainsboro;
   font-family: 'Lato', sans-serif;
-  color: #F0FFFF;
 }
 
 img{
@@ -48,10 +47,17 @@ label{
     clear: left;
     width: 170px;
     text-align: left;
+    color: black;
+    margin: 0.333% 0 0.333%;
 }
 input {
   display: inline-block;
   float: left;
+  margin: 0.333% 0 0.333%;
+}
+
+.create-user {
+  margin-bottom: 5%;
 }
 
 .clear{
@@ -118,6 +124,7 @@ a {
   background-color: AliceBlue;
   box-shadow: 1px 1px 10px #ffffff;
   padding: 0% 1% 1%;
+  color: #DDD;
 }
 .content-container > h1 {
   padding: 1% 1% 0;
@@ -233,6 +240,7 @@ a {
   border-style: solid;
   border-color: black;
   border-width: 1px;
+  color: black;
 }
 .user_details{
   float: left;
@@ -262,4 +270,12 @@ a {
     content: "";
     clear: both;
     display: table;
+}
+
+.rentings_container > .center {
+  display: inline-block;
+  width: auto;
+  margin: auto auto;
+  height: 2em;
+  border-style: none;
 }

@@ -5,10 +5,11 @@
   <%= mess %>
   <% end %>
 <% end %>
-
+<div class="create-user">
 <%= form_tag controller: "sessions", action: "create", method: :post %>
    <%= label_tag :name, "Username" %> <%= text_field_tag :name %>
    <%= label_tag :password, "Password" %> <%= password_field_tag :password %>
-   <%= submit_tag "Log In" %><br>
+   <p class="clear"><%= submit_tag "Log In" %></p>
+ </div>
 
-   <%= link_to "Create Account", new_user_path%>
+<div style="clear: both; width:auto; padding-top: 5%;">New around here? <%= link_to "Create Account", new_user_path%></div>
