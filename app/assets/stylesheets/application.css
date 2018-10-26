@@ -166,6 +166,7 @@ a {
   text-align: center;
   text-overflow: ellipsis;
   overflow-y: hidden;
+  overflow-x: hidden;
   font-size: 80%;
 }
 

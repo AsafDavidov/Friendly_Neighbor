@@ -39,7 +39,7 @@
     <div>
     Rented Item: <%= review.renting.item.name %> <br>
     Rating: <%= review.rating %> <br>
-    <%= if !!review.renting.user.name ? "#{review.renting.user.name}'s Notes: " : "Former Neighbor's Notes: "%> <%= review.content %> <br>
+    <%= "#{review.renting.user.name}'s Notes: " %> <%= review.content %> <br>
   </div>
 <% end %>
 </div>

@@ -49,12 +49,13 @@ class UsersController < ApplicationController
     end
   end
 
-  def destroy
-    user = User.find(session[:user_id])
-    user.destroy
-    reset_session
-    redirect_to controller: "sessions", action: "welcome"
-  end
+  
+  # def destroy
+  #   user = User.find(session[:user_id])
+  #   user.destroy
+  #   reset_session
+  #   redirect_to controller: "sessions", action: "welcome"
+  # end
 
 
   private
