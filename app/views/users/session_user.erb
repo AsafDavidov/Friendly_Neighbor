@@ -34,7 +34,7 @@
 </div>
 <h3>Most Recent Reviews</h3>
 <div class="rentings_container">
-    <%= "No reviews have been posted!" if @user.five_recent_reviews.empty? %>
+    <div class="center"><%= "No reviews have been posted!" if @user.five_recent_reviews.empty? %></div>
     <% @user.five_recent_reviews.each do |review| %>
     <div>
     Rented Item: <%= review.renting.item.name %> <br>

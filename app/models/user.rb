@@ -2,7 +2,7 @@ class User < ApplicationRecord
   validates :name, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true
   validates :address, presence: true
-  
+
 
   has_secure_password
   has_many :items #As a renter
@@ -23,6 +23,6 @@ class User < ApplicationRecord
   end
 
   def average_rating
-    (reviews.map {|review| review.rating}.reduce(:+).to_f / reviews.count).round(1) if !self.reviews.empty?
+    !self.reviews.empty? ? (reviews.map {|review| review.rating}.reduce(:+).to_f / reviews.count).round(2) : "No reviews yet!"
   end
 end
